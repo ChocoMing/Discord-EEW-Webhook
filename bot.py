@@ -17,7 +17,6 @@ async def on_ready():
     embed.set_author(name='Taiwan EEW System',
                      icon_url='icon_url')
     embed.add_field(name='XX市', value=f'XX區 {ggg}')
-    embed.set_footer(text="巧克明#8831", icon='https://cdn.discordapp.com/attachments/824601587867058207/861242805954412574/167193030_914035709353788_1311373607286801533_n.png')
 
     async with aiohttp.ClientSession() as session:
         for webhook_url in 'webhook_url':
