@@ -1,3 +1,4 @@
+#地牛Wake UP!
 # EEW-discord-bot
 
 地牛Wake UP! 連動speech.bat
