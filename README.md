@@ -1,8 +1,6 @@
 # [![Discord](https://discord.com/api/guilds/808241076657717268/widget.png)](https://discord.gg/rCZeuaucjf)
 # 地牛Wake UP!連動
 # EEW-discord-bot
-
-<<<<<<< HEAD
 ## 以下你你可以修改的資料
 在 bot.py 裡
 ```py
