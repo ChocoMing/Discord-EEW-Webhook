@@ -1,5 +1,4 @@
 import re
-from aiohttp.helpers import TOKEN
 import discord
 import datetime
 from discord import Webhook, AsyncWebhookAdapter
@@ -9,12 +8,10 @@ load_dotenv()
 
 bot = discord.Client()
 
-TOKEN = os.getenv("BOT_TOKEN")
-Webhook_URL = os.getenv("Webhook_URL")
-
-#以下你你可以設定的變數
-city = "XX市" #你要顯示的縣、市 例:台北市
-Area = "XX區" #你要顯示的區 例:松山區
+token = os.getenv("BOT_TOKEN")
+Webhook_URL = os.getenv("WEBHOOK_URL")
+city = os.getenv("CITY")
+Area = os.getenv("AREA")
 #------------------------------
 
 @bot.event
@@ -36,4 +33,4 @@ async def on_ready():
             await webhook.send(embed=embed, username="地牛Wake Up!", avatar_url="https://scontent.ftpe4-1.fna.fbcdn.net/v/t1.6435-9/31783240_381366989015031_1910938126604304384_n.png?_nc_cat=101&ccb=1-5&_nc_sid=09cbfe&_nc_ohc=8ND3oeqVlMoAX_bm4Wu&_nc_ht=scontent.ftpe4-1.fna&oh=804e6c88f560d73055ea327509a26b08&oe=61445067")
     await bot.close()
 
-bot.run(TOKEN)
+bot.run(token)
