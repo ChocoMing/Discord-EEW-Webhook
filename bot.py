@@ -1,36 +1,49 @@
 import re
-import discord
-import datetime
-from discord import Webhook, AsyncWebhookAdapter
-import aiohttp
+import os
+import json
 from dotenv import load_dotenv
+from discord_webhook import DiscordWebhook, DiscordEmbed
+
+from time import sleep
+
 load_dotenv()
 
-bot = discord.Client()
-
-token = os.getenv("BOT_TOKEN")
 Webhook_URL = os.getenv("WEBHOOK_URL")
 city = os.getenv("CITY")
 Area = os.getenv("AREA")
-#------------------------------
 
-@bot.event
-async def on_ready():
-    jdate1 = {"1": "1級"}
-    ggg = re.sub(r"(\d)$", "\\1級", jdate1["1"]).replace(
-        "-", "弱").replace("+", "強")
-    embed = discord.Embed(title=':rotating_light:【地震速報】',
-                          timestamp=datetime.datetime.utcnow(),
-                          description='慎防搖晃(預估震度)', color=0x03b2f8)
-    embed.set_author(name='Taiwan EEW System',
-                     icon_url='https://media.discordapp.net/attachments/345147297539162115/732527807435112478/EEW.png')
-    embed.add_field(name=city, value= f"{Area} {ggg}")
+with open('file.json', mode='r', encoding='UTF8') as jfile:
+    jdate1 = json.load(jfile)
+    
+ggg = re.sub(r"(\d)$", "\\1級", jdate1["1"]).replace("-", "弱").replace("+", "強")
+sec = jdate1["2"]
 
-    async with aiohttp.ClientSession() as session:
-        for webhook_url in [Webhook_URL]:
-            webhook = Webhook.from_url(
-                webhook_url, adapter=AsyncWebhookAdapter(session))
-            await webhook.send(embed=embed, username="地牛Wake Up!", avatar_url="https://scontent.ftpe4-1.fna.fbcdn.net/v/t1.6435-9/31783240_381366989015031_1910938126604304384_n.png?_nc_cat=101&ccb=1-5&_nc_sid=09cbfe&_nc_ohc=8ND3oeqVlMoAX_bm4Wu&_nc_ht=scontent.ftpe4-1.fna&oh=804e6c88f560d73055ea327509a26b08&oe=61445067")
-    await bot.close()
+webhook = DiscordWebhook(url=Webhook_URL, username="地牛Wake UP!", 
+        avatar_url="https://cdn.discordapp.com/attachments/825307887219114034/902494942352519168/FB_IMG_1635241955969.jpg",
+        content=f'倒數{sec}抵達!')
 
-bot.run(token)
+embed = DiscordEmbed(title=':rotating_light:【地震速報】', description='慎防搖晃(預估震度)', color='03b2f8')
+embed.set_author(name='Taiwan EEW System', 
+        icon_url='https://media.discordapp.net/attachments/345147297539162115/732527807435112478/EEW.png')
+embed.set_timestamp()
+embed.add_embed_field(name=city, value=f"{Area} {ggg}")
+embed.set_footer(text=f'預計{sec}後到達')
+webhook.add_embed(embed)
+
+sent_webhook = webhook.execute()
+
+sec1 = int(sec)
+aaa = sent_webhook
+while sec1:
+    sec1 = sec1 - 1
+
+    sleep(0.6)
+
+    webhook.content = f'倒數{sec1}抵達!'
+    sent_webhook = webhook.edit(aaa)
+
+    if sec1 == 0:
+        sleep(0.6)
+        webhook.content = f'已抵達!'
+        sent_webhook = webhook.edit(aaa)
+        break
