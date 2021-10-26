@@ -47,3 +47,4 @@ while sec1:
         webhook.content = f'已抵達!'
         sent_webhook = webhook.edit(aaa)
         break
+ 
