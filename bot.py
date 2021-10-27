@@ -20,14 +20,13 @@ sec = jdate1["2"]
 
 webhook = DiscordWebhook(url=Webhook_URL, username="地牛Wake UP!", 
         avatar_url="https://cdn.discordapp.com/attachments/825307887219114034/902494942352519168/FB_IMG_1635241955969.jpg",
-        content=f'倒數{sec}抵達!')
+        content=f'倒數{sec}秒抵達!')
 
 embed = DiscordEmbed(title=':rotating_light:【地震速報】', description='慎防搖晃(預估震度)', color='03b2f8')
 embed.set_author(name='Taiwan EEW System', 
         icon_url='https://media.discordapp.net/attachments/345147297539162115/732527807435112478/EEW.png')
 embed.set_timestamp()
-embed.add_embed_field(name=city, value=f"{Area} {ggg}")
-embed.set_footer(text=f'預計{sec}後到達')
+embed.add_embed_field(name=f"{city}", value=f"{Area} {ggg}")
 webhook.add_embed(embed)
 
 sent_webhook = webhook.execute()
@@ -39,7 +38,7 @@ while sec1:
 
     sleep(0.6)
 
-    webhook.content = f'倒數{sec1}抵達!'
+    webhook.content = f'倒數{sec1}秒後到達!'
     sent_webhook = webhook.edit(aaa)
 
     if sec1 == 0:
