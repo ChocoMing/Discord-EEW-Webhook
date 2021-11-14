@@ -1,51 +1,49 @@
 @echo off
 :TNMENU
-color 0b
-echo -
+cls
+color 3
 echo -------------------------------------------------------------------------
-echo - �a��Wake UP!�s�� Discord-Webhook-EEW
+echo - 地牛Wake UP!連動 Discord-Webhook-EEW (套件安裝)
 echo - By.Eric101201 , ChocoMing
 echo -
-echo - ��1.�}�l�w�� Start Install                             
-echo - ��0.���} Exit      
+echo - 1.開始安裝 Start Install                             
+echo - 0.離開 Exit      
 echo --------------------------------------------------------------------------
-echo -
 
 set choice=
-set /p choice= �п�J�Ʀr :
+set /p choice= 請輸入數字 :
 if '%choice%'=='1' goto ST
 if '%choice%'=='0' goto OEND
 echo "%choice%" is not vaild, try again
 goto TNMENU
 
 :ST
-echo - �w��discord_webhook�M�󤤡C
+cls
+echo - 安裝discord_webhook套件中。
 pip install discord_webhook
-echo - �w�˧����C
-echo - �w��dotenv�M�󤤡C
+echo - 安裝完成。
+echo - 安裝dotenv套件中。
 pip install python-dotenv
-echo - �w�˧����C
+echo - 安裝完成。
 echo - By.Eric101201 , ChocoMing
+timeout /t 5
 goto OEND
 
 :OEND
-echo *
-echo *
-echo *
-echo *
-echo *
+color c
+cls
 echo -------------------------------------------------------------------------
-echo - �a��Wake UP!�s�� Discord-Webhook-EEW
+echo - 地牛Wake UP!連動 Discord-Webhook-EEW (套件安裝)
 echo - By.Eric101201 , ChocoMing
 echo -
-echo - �T�w���}? Sure Leave?
+echo - 確定離開? Sure Leave? (輸入除了1.2以外的數字，將會直接離開。)
 echo -
-echo - ��1.���� Cancel
-echo - ��0.���} Exit      
+echo - 1.取消 Cancel
+echo - 0.離開 Exit      
 echo --------------------------------------------------------------------------
 
 set choice=
-set /p choice= �п�J�Ʀr :
+set /p choice= 請輸入數字 :
 if '%choice%'=='1' goto TNMENU
 if '%choice%'=='0' goto END
 echo "%choice%" is not vaild, try again
