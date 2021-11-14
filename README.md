@@ -3,7 +3,7 @@
 
 # 安裝Python
 Python的部分，我建議用微軟商店安裝，比較不會出問題。 (~~絕對不是我懶得教~~
-* 建議安裝3.10
+* 建議安裝3.7以上 8.10以下(8.10以上無法正常使用)
 ![image](https://cdn.discordapp.com/attachments/829731415435903018/902558511806943252/unknown.png)
 # 安裝套件
 開啟`Install.bat`，輸入`1`並按下Enter後就會開始安裝。
