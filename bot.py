@@ -16,7 +16,7 @@ with open('file.json', mode='r', encoding='UTF8') as jfile:
     jdate1 = json.load(jfile)
     
 ggg = re.sub(r"(\d)$", "\\1級", jdate1["1"]).replace("-", "弱").replace("+", "強")
-sec = jdate1["2"]
+sec = int(jdate1["2"]) + 2
 
 webhook = DiscordWebhook(url=Webhook_URL, username="地牛Wake UP!", 
         avatar_url="https://cdn.discordapp.com/attachments/825307887219114034/902494942352519168/FB_IMG_1635241955969.jpg",
