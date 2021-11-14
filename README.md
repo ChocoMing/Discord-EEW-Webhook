@@ -8,7 +8,7 @@ Python的部分，我建議用微軟商店安裝，比較不會出問題。 (~~�
 # 安裝套件
 開啟`Install.bat`，輸入`1`並按下Enter後就會開始安裝。
 ![image](https://cdn.discordapp.com/attachments/829731415435903018/902556564878164059/unknown.png)
-![image](https://cdn.discordapp.com/attachments/829731415435903018/902557521196232724/unknown.png)
+![image](https://cdn.discordapp.com/attachments/829731415435903018/909467601082646548/unknown.png)
 
 # 以下你你可以修改的資料
 在 `.env` 裡
