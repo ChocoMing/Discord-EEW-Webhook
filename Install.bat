@@ -36,7 +36,7 @@ echo -------------------------------------------------------------------------
 echo - 地牛Wake UP!連動 Discord-Webhook-EEW (套件安裝)
 echo - By.Eric101201 , ChocoMing
 echo -
-echo - 確定離開? Sure Leave? (輸入除了1.2以外的數字，將會直接離開。)
+echo - 確定離開? Sure Leave?
 echo -
 echo - 1.取消 Cancel
 echo - 0.離開 Exit      
