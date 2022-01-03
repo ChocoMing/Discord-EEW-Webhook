@@ -25,4 +25,4 @@ AREA=YOYR_AREA #你要顯示的區 例:松山區,取代掉YOYR_AREA
 # 開發人員
 真的很感謝`Eric101201`，大部分都是他寫的!
 
-[![點我進入DC伺服器](https://discord.com/api/guilds/815819580840607807/widget.png?style=banner1)](https://discord.gg/rCZeuaucjf)  
+[![點我進入DC伺服器](https://discord.com/api/guilds/808241076657717268/widget.png?style=banner1)](https://discord.gg/rCZeuaucjf)  
