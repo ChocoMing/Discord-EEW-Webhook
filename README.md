@@ -2,7 +2,7 @@
 # 地牛Wake UP!連動 Discord-Webhook-EEW
 
 # 安裝Python
-Python的部分，我建議用微軟商店安裝，比較不會出問題。 (~~絕對不是我懶得教~~
+Python的部分，使用官網或微軟商店安裝。
 * 建議安裝3.7以上 3.10以下(3.10以上無法正常使用)
 ![image](https://cdn.discordapp.com/attachments/829731415435903018/902558511806943252/unknown.png)
 # 安裝套件
@@ -10,7 +10,7 @@ Python的部分，我建議用微軟商店安裝，比較不會出問題。 (~~�
 ![image](https://cdn.discordapp.com/attachments/829731415435903018/902556564878164059/unknown.png)
 ![image](https://cdn.discordapp.com/attachments/829731415435903018/909467601082646548/unknown.png)
 
-# 以下你你可以修改的資料
+# 修改資料
 在 `.env` 裡
 ```py
 WEBHOOK_URL=YOUR_Webhook_URL #你的Webhook網址,取代掉YOUR_Webhook_URL
@@ -23,4 +23,4 @@ AREA=YOYR_AREA #你要顯示的區 例:松山區,取代掉YOYR_AREA
 ![image](https://cdn.discordapp.com/attachments/829731415435903018/902568066133680158/2021-10-26_224139.png)
 
 # 開發人員
-真的很感謝`Eric101201`，大部分都是他寫的!
+特別感謝`Eric101201`，都他寫的🛐
